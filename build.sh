@@ -1,4 +1,4 @@
-PROJECTNAME=ChatUI #每个项目一个名称
+PROJECTNAME=chatui #每个项目一个名称
 echo 'start build project name:'
 echo ${PROJECTNAME}
 NEWIMAGENAME=${PROJECTNAME}_${BUILD_ID} #这个是最终打包镜像的名称
@@ -21,4 +21,4 @@ if [ $OLDIMAGECOUNT -gt 0 ]; then
 fi
 docker image tag $TEMPNAME $NEWIMAGENAME
 docker rmi $TEMPNAME:latest
-docker run --name $NEWIMAGENAME -p 8081:80 -d $NEWIMAGENAME
+docker run --name $NEWIMAGENAME -p 8071:3000 -d $NEWIMAGENAME
